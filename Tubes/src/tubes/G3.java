@@ -97,6 +97,7 @@ public class G3 extends javax.swing.JFrame {
             }
         ));
         tpesan.setGridColor(new java.awt.Color(255, 255, 255));
+        tpesan.setRowHeight(20);
         jScrollPane3.setViewportView(tpesan);
 
         jLabel14.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
@@ -114,6 +115,7 @@ public class G3 extends javax.swing.JFrame {
             }
         ));
         tpesan1.setGridColor(new java.awt.Color(255, 255, 255));
+        tpesan1.setRowHeight(20);
         jScrollPane1.setViewportView(tpesan1);
 
         jLabel4.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
@@ -176,6 +178,7 @@ public class G3 extends javax.swing.JFrame {
             }
         ));
         tterima.setGridColor(new java.awt.Color(255, 255, 255));
+        tterima.setRowHeight(20);
         jScrollPane2.setViewportView(tterima);
 
         jLabel6.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
@@ -192,6 +195,7 @@ public class G3 extends javax.swing.JFrame {
             }
         ));
         tterima1.setGridColor(new java.awt.Color(255, 255, 255));
+        tterima1.setRowHeight(20);
         jScrollPane4.setViewportView(tterima1);
 
         batal2.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
@@ -394,7 +398,7 @@ public class G3 extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)

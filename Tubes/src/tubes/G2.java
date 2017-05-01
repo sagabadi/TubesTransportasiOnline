@@ -169,6 +169,7 @@ public class G2 extends javax.swing.JFrame {
             }
         ));
         jTable1.setGridColor(new java.awt.Color(255, 255, 255));
+        jTable1.setRowHeight(20);
         jScrollPane2.setViewportView(jTable1);
 
         pesan.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -184,6 +185,7 @@ public class G2 extends javax.swing.JFrame {
             }
         ));
         tpesan.setGridColor(new java.awt.Color(255, 255, 255));
+        tpesan.setRowHeight(20);
         jScrollPane1.setViewportView(tpesan);
 
         jLabel14.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -269,7 +271,7 @@ public class G2 extends javax.swing.JFrame {
                                     .addComponent(jLabel14)
                                     .addGap(189, 189, 189))
                                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 540, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 39, Short.MAX_VALUE))
+                        .addGap(0, 21, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel7)
@@ -361,10 +363,10 @@ public class G2 extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(19, Short.MAX_VALUE))
+                        .addContainerGap(37, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(use)
-                        .addGap(351, 351, 351)
+                        .addGap(319, 319, 319)
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(logout)
