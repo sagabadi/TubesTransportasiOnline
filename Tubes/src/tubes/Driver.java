@@ -9,7 +9,7 @@ package tubes;
  *
  * @author SagabAdi
  */
-public class Tubes {
+public class Driver {
 
     /**
      * @param args the command line arguments
@@ -22,6 +22,5 @@ public class Tubes {
         g.setVisible(true);
         AplikasiConsole apps = new AplikasiConsole(model);
         apps.appss();
-        
     }
 }
