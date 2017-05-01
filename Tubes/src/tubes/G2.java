@@ -366,7 +366,7 @@ public class G2 extends javax.swing.JFrame {
                         .addContainerGap(37, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(use)
-                        .addGap(319, 319, 319)
+                        .addGap(406, 406, 406)
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(logout)

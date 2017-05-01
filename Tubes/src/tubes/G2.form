@@ -64,7 +64,7 @@
                       </Group>
                       <Group type="102" attributes="0">
                           <Component id="use" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="319" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="406" max="-2" attributes="0"/>
                           <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="logout" min="-2" max="-2" attributes="0"/>
