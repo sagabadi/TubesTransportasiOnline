@@ -33,8 +33,13 @@ public class Controller {
                 } else {
                     a = g.getNama();
                     b = g.getPass();
-                    model.setPe(a, b);
-                    JOptionPane.showMessageDialog(null, "Pengemudi Berhasil Ditambah");
+                    model.loadPelall();
+                    if (model.searchPel(a, b) == null) {
+                        model.setPe(a, b);
+                        JOptionPane.showMessageDialog(null, "Pelanggan Berhasil Ditambah");
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Akun Sudah Terpakai !!");
+                    }
                     g.reset();
                 }
             }
@@ -49,8 +54,14 @@ public class Controller {
                 } else {
                     a = g.getNama();
                     b = g.getPass();
-                    model.setPeng(a, b);
-                    JOptionPane.showMessageDialog(null, "Pengemudi Berhasil Ditambah");
+                    model.loadPengall();
+                    if (model.searchPeng(a, b) == null) {
+                        model.setPeng(a, b);
+                        JOptionPane.showMessageDialog(null, "Pengemudi Berhasil Ditambah");
+                        g.reset();
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Akun Sudah Terpakai !!");
+                    }
                     g.reset();
                 }
             }
@@ -64,22 +75,23 @@ public class Controller {
                 boolean nemu = false;
                 a = g.getNama();
                 b = g.getPass();
-
-                while (nemu != true && i != model.pe.size()) {
-                    if (model.pe.get(i).getNama().equals(a) && model.pe.get(i).getId().equals(b)) {
-                        nemu = true;
-                    } else {
-                        i++;
+                model.loadPelall();
+                if (model.LoginPel(a, b) != null) {
+                    while (nemu != true) {
+                        if (model.getPe(i).getNama().equals(a) && model.getPe(i).getId().equals(b)) {
+                            nemu = true;
+                        } else {
+                            i++;
+                        }
                     }
                 }
-
                 if (nemu == true) {
                     JOptionPane.showMessageDialog(null, "Berhasil Login");
                     g.dispose();
                     G2 g2 = new G2();
                     Controller2 c = new Controller2(g2, model, i);
                     g2.setVisible(true);
-                } else if (nemu == false || model.pe.size() == 0) {
+                } else if (nemu == false || model.getsizePe() == 0) {
                     JOptionPane.showMessageDialog(null, "Gagal Login");
                     g.reset();
                 } else {
@@ -98,22 +110,23 @@ public class Controller {
                 boolean nemu = false;
                 a = g.getNama();
                 b = g.getPass();
-
-                while (nemu != true && i != model.peng.size()) {
-                    if (model.peng.get(i).getNama().equals(a) && model.peng.get(i).getId().equals(b)) {
-                        nemu = true;
-                    } else {
-                        i++;
+                model.loadPengall();
+                if (model.LoginPeng(a, b) != null) {
+                    while (nemu != true) {
+                        if (model.getPeng(i).getNama().equals(a) && model.getPeng(i).getId().equals(b)) {
+                            nemu = true;
+                        } else {
+                            i++;
+                        }
                     }
                 }
-
                 if (nemu == true) {
                     JOptionPane.showMessageDialog(null, "Berhasil Login");
                     g.dispose();
                     G3 g3 = new G3();
                     Controller3 c = new Controller3(g3, model, i);
                     g3.setVisible(true);
-                } else if (nemu == false || model.peng.size() == 0) {
+                } else if (nemu == false || model.getsizePeng() == 0) {
                     JOptionPane.showMessageDialog(null, "Gagal Login");
                     g.reset();
                 } else {

@@ -14,8 +14,8 @@ import java.util.List;
  */
 public class Pengemudi extends Orang {
 
-    private List<Pesanan> pesanan = new ArrayList();
-    private List<Kurir> kurir = new ArrayList();
+    private ArrayList<Pesanan> pesanan = new ArrayList();
+    private ArrayList<Kurir> kurir = new ArrayList();
     private String Nama;
     private String id, pk;
     private int length;
@@ -66,6 +66,14 @@ public class Pengemudi extends Orang {
 
     public int getLengthk() {
         return kurir.size();
+    }
+
+    public void setPesanan(ArrayList<Pesanan> pesanan) {
+        this.pesanan = pesanan;
+    }
+
+    public void setKurir(ArrayList<Kurir> kurir) {
+        this.kurir = kurir;
     }
 
     public void Removepesanan(int i) {

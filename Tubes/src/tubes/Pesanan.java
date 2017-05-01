@@ -18,7 +18,13 @@ public class Pesanan {
         this.Tujuan = Tujuan;
     }
 
-    public Pesanan(String id,String nama, String Asal, String Tujuan) {
+    public Pesanan(String id, String Asal, String Tujuan) {
+        this.Id = id;
+        this.Asal = Asal;
+        this.Tujuan = Tujuan;
+    }
+
+    public Pesanan(String id, String nama, String Asal, String Tujuan) {
         this.Asal = Asal;
         this.Tujuan = Tujuan;
         this.Nama = nama;
@@ -53,4 +59,12 @@ public class Pesanan {
         this.Id = Id;
     }
 
+    @Override
+    public String toString() {
+        return "Id Pesanan        : " + Id 
+           + "\nAsal Keberangkatan: " + Asal 
+           + "\nTujuan            : " + Tujuan ;
+    }
+
+    
 }

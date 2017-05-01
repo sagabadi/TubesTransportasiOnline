@@ -40,4 +40,14 @@ public class Kurir extends Pesanan {
     public void setIdKurir(String idKurir) {
         this.idKurir = idKurir;
     }
+
+    @Override
+    public String toString() {
+        return "Id Kurir    : " + getIdKurir()
+           + "\n  Jenis Kurir : " + getNamaKurir()
+           + "\n  Asal        : " + getAsal()
+           + "\n  Tujuan      : " + getTujuan() ;
+    }
+    
+    
 }

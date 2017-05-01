@@ -7,6 +7,7 @@ package tubes;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
@@ -19,16 +20,25 @@ public class Controller2 {
     private Model model;
     private G2 g2;
     int l = 0;
+    private ArrayList<String> jenis = new ArrayList();
 
     public Controller2(G2 g2, Model model, int i) {
+        jenis.add("Makanan");
+        jenis.add("Paket");
         this.g2 = g2;
         this.model = model;
-        if (model.pe.get(i).getLength() >= 0) {
-            for (int j = 0; j < model.pe.get(i).getLength(); j++) {
-                g2.setTpesan(model.pe.get(i).getPesanan(j).getId(), model.pe.get(i).getPesanan(j).getAsal(), model.pe.get(i).getPesanan(j).getTujuan());
+        if (model.getPe(i).getLength() >= 0) {
+            for (int j = 0; j < model.getPe(i).getLength(); j++) {
+                g2.setTpesan(model.getPe(i).getPesanan(j).getId(), model.getPe(i).getPesanan(j).getAsal(), model.getPe(i).getPesanan(j).getTujuan());
             }
         }
-        g2.setUse(model.pe.get(i).getNama(), model.pe.get(i).getPk());
+        if (model.getPe(i).getLengthk() >= 0) {
+            for (int j = 0; j < model.getPe(i).getLengthk(); j++) {
+                g2.setTkurir(model.getPe(i).getKurir(j).getId(), model.getPe(i).getKurir(j).getNama(), model.getPe(i).getKurir(j).getAsal(), model.getPe(i).getKurir(j).getTujuan());
+
+            }
+        }
+        g2.setUse(model.getPe(i).getNama(), model.getPe(i).getPk());
         this.g2.addListener1(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -39,11 +49,11 @@ public class Controller2 {
                 } else {
                     a = g2.getAsal();
                     b = g2.getTujuan();
-                    model.pe.get(i).createPesanan(a, b);
-                    l = model.pe.get(i).getLength();
+                    model.getPe(i).createPesanan(a, b);
+                    l = model.getsizePes();
                     JOptionPane.showMessageDialog(null, "Pesanan Berhasil");
                     g2.reset();
-                    g2.setTpesan(model.pe.get(i).getPesanan(l - 1).getId(), model.pe.get(i).getPesanan(l - 1).getAsal(), model.pe.get(i).getPesanan(l - 1).getTujuan());
+                    g2.setTpesan(model.getPe(i).getPesanan(l - 1).getId(), model.getPe(i).getPesanan(l - 1).getAsal(), model.getPe(i).getPesanan(l - 1).getTujuan());
                 }
 
             }
@@ -56,23 +66,27 @@ public class Controller2 {
                     JOptionPane.showMessageDialog(null, "Isi Dengan Benar !! ");
                 } else {
                     j = g2.getBatals();
-                    if (model.pe.get(i).getLength() == 0) {
+                    if (model.getPe(i).getLength() == 0) {
                         JOptionPane.showMessageDialog(null, "PESANAN KOSONG !!");
                         g2.reset();
                     } else {
-                        JOptionPane.showMessageDialog(null, "Pesanan Berhasil Dibatalkan");
-                        g2.reset();
                         int n = 0;
                         boolean nemu = false;
-                        while (nemu != true) {
-                            if (model.pe.get(i).getPesanan(n).getId().equals(j)) {
-                                nemu = true;
-                            } else {
-                                n++;
+                        if (model.searchPesan(j) != null) {
+                            while (nemu != true) {
+                                if (model.getPe(i).getPesanan(n).getId().equals(j)) {
+                                    nemu = true;
+                                } else {
+                                    n++;
+                                }
                             }
+                            g2.removeRow(n);
+                            model.deletePesananPelanggan(j);
+                            JOptionPane.showMessageDialog(null, "Pesanan Berhasil Dibatalkan");
+                        } else {
+                            JOptionPane.showMessageDialog(null, "Pesanan Tidak Ada");
                         }
-                        model.pe.get(i).Removepesanan(n);
-                        g2.removeRow(n);
+                        g2.reset();
                     }
                 }
             }
@@ -84,6 +98,57 @@ public class Controller2 {
                 G1 g = new G1();
                 Controller c = new Controller(g, model);
                 g.setVisible(true);
+            }
+        });
+        this.g2.addListener4(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String a, b;
+                if (g2.getAsal1().equals("") || g2.getTujuan1().equals("")) {
+                    JOptionPane.showMessageDialog(null, "Isi Dengan Benar !!");
+                    g2.reset();
+                } else {
+                    a = g2.getAsal1();
+                    b = g2.getTujuan1();
+                    model.getPe(i).createKurir(jenis.get(g2.getJeniskurir()), a, b);
+                    l = model.getsizeKur();
+                    JOptionPane.showMessageDialog(null, "Pesanan Berhasil");
+                    g2.reset();
+                    g2.setTkurir(model.getPe(i).getKurir(l - 1).getId(), model.getPe(i).getKurir(l - 1).getNama(), model.getPe(i).getKurir(l - 1).getAsal(), model.getPe(i).getKurir(l - 1).getTujuan());
+                }
+            }
+        });
+        this.g2.addListener5(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String j;
+                if (g2.getBatals1().equals("")) {
+                    JOptionPane.showMessageDialog(null, "Isi Dengan Benar !! ");
+                } else {
+                    j = g2.getBatals1();
+                    if (model.getPe(i).getLengthk() == 0) {
+                        JOptionPane.showMessageDialog(null, "PESANAN KOSONG !!");
+                        g2.reset();
+                    } else {
+                        int n = 0;
+                        boolean nemu = false;
+                        if (model.searchKurir(j) != null) {
+                            while (nemu != true) {
+                                if (model.getPe(i).getKurir(n).getId().equals(j)) {
+                                    nemu = true;
+                                } else {
+                                    n++;
+                                }
+                            }
+                            model.deleteKurirPelanggan(j);
+                            g2.removeRowk(n);
+                            JOptionPane.showMessageDialog(null, "Pesanan Berhasil Dibatalkan");
+                        } else {
+                            JOptionPane.showMessageDialog(null, "Pesanan Tidak Ada");
+                        }
+                        g2.reset();
+                    }
+                }
             }
         });
     }

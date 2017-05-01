@@ -34,10 +34,8 @@ public class G3 extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tpesan = new javax.swing.JTable();
+        tpesan1 = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        terima1 = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         terima2 = new javax.swing.JTextField();
         terima = new javax.swing.JButton();
@@ -50,45 +48,52 @@ public class G3 extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         tterima = new javax.swing.JTable();
         jLabel5 = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        tpesan = new javax.swing.JTable();
+        jLabel10 = new javax.swing.JLabel();
+        terima4 = new javax.swing.JTextField();
+        terima5 = new javax.swing.JButton();
+        jLabel11 = new javax.swing.JLabel();
+        batals3 = new javax.swing.JTextField();
+        batal2 = new javax.swing.JButton();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        tterima1 = new javax.swing.JTable();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel1.setText("Welcome to kejoG");
+        jLabel1.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
+        jLabel1.setText("Welcome to OCJek");
 
-        tpesan.setModel(new javax.swing.table.DefaultTableModel(
+        tpesan1.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        tpesan1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Id Pelanggan", "Nama Pelanggan", "Id Pesanan", "Alamat Penjemputan", "Alamat Tujuan"
+                "Id Pelanggan", "Nama Pelanggan", "Id Pesanan", "Jenis Kurir", "Alamat Asal", "Alamat Tujuan"
             }
         ));
-        jScrollPane1.setViewportView(tpesan);
-        if (tpesan.getColumnModel().getColumnCount() > 0) {
-            tpesan.getColumnModel().getColumn(0).setHeaderValue("Id Pelanggan");
-            tpesan.getColumnModel().getColumn(1).setResizable(false);
-            tpesan.getColumnModel().getColumn(1).setHeaderValue("Nama Pelanggan");
-        }
+        jScrollPane1.setViewportView(tpesan1);
 
+        jLabel2.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
         jLabel2.setText("Form Terima Pesanan");
 
-        jLabel6.setText("Id Pelanggan");
-
-        terima1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                terima1ActionPerformed(evt);
-            }
-        });
-
+        jLabel7.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
         jLabel7.setText("Id Pesanan");
 
+        terima2.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
         terima2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 terima2ActionPerformed(evt);
             }
         });
 
+        terima.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
         terima.setText("Terima Pesanan");
         terima.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -96,14 +101,17 @@ public class G3 extends javax.swing.JFrame {
             }
         });
 
+        jLabel9.setFont(new java.awt.Font("Segoe UI Light", 0, 11)); // NOI18N
         jLabel9.setText("Id Pesanan");
 
+        batals2.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
         batals2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 batals2ActionPerformed(evt);
             }
         });
 
+        batal1.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
         batal1.setText("Batalkan Pesanan");
         batal1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -111,8 +119,10 @@ public class G3 extends javax.swing.JFrame {
             }
         });
 
+        jLabel3.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
         jLabel3.setText("Form Batal Pesanan");
 
+        logout.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
         logout.setText("Logout");
         logout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -120,8 +130,10 @@ public class G3 extends javax.swing.JFrame {
             }
         });
 
+        jLabel4.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
         jLabel4.setText("List Pesanan Yang Diterima");
 
+        tterima.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
         tterima.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -132,59 +144,163 @@ public class G3 extends javax.swing.JFrame {
         ));
         jScrollPane2.setViewportView(tterima);
 
+        jLabel5.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
         jLabel5.setText("List Pesanan Pelanggan");
+
+        tpesan.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        tpesan.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Id Pelanggan", "Nama Pelanggan", "Id Pesanan", "Alamat Penjemputan", "Alamat Tujuan"
+            }
+        ));
+        jScrollPane3.setViewportView(tpesan);
+
+        jLabel10.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        jLabel10.setText("Id Pesanan");
+
+        terima4.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        terima4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                terima4ActionPerformed(evt);
+            }
+        });
+
+        terima5.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        terima5.setText("Terima Pesanan");
+        terima5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                terima5ActionPerformed(evt);
+            }
+        });
+
+        jLabel11.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        jLabel11.setText("Id Pesanan");
+
+        batals3.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        batals3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                batals3ActionPerformed(evt);
+            }
+        });
+
+        batal2.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        batal2.setText("Batalkan Pesanan");
+        batal2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                batal2ActionPerformed(evt);
+            }
+        });
+
+        jLabel12.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        jLabel12.setText("Form Batal Pesanan Kurir");
+
+        jLabel13.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        jLabel13.setText("Form Terima Pesanan Kurir");
+
+        jLabel14.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        jLabel14.setText("List Pesanan Kurir Pelanggan");
+
+        tterima1.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        tterima1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Id Pesanan", "Jenis Kurir", "Alamat Asal", "Alamat Tujuan"
+            }
+        ));
+        jScrollPane4.setViewportView(tterima1);
+
+        jLabel6.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        jLabel6.setText("List Pesanan Kurir Yang Diterima");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(41, 41, 41)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel7)
-                                .addGap(18, 18, 18)
-                                .addComponent(terima2, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel2)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jLabel6)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(terima1, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(terima))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel3)
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                    .addGap(66, 66, 66)
-                                    .addComponent(batal1)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel9)
-                                .addGap(18, 18, 18)
-                                .addComponent(batals2, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addComponent(jScrollPane1)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 358, Short.MAX_VALUE)
-                        .addComponent(jLabel1)
-                        .addGap(305, 305, 305)
-                        .addComponent(logout)))
-                .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 610, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(251, 251, 251)
-                        .addComponent(jLabel4)))
-                .addGap(165, 165, 165))
+                .addComponent(jLabel14)
+                .addGap(468, 468, 468))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel5)
-                .addGap(403, 403, 403))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 970, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(23, 23, 23)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(terima)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(jLabel7)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(terima2, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addGap(50, 50, 50))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                        .addGap(38, 38, 38)
+                                        .addComponent(jLabel2)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel9)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(batals2, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(batal1)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel3)
+                                        .addGap(49, 49, 49))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(terima5)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(jLabel10)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(terima4, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addGap(50, 50, 50))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                        .addGap(28, 28, 28)
+                                        .addComponent(jLabel13)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel11)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(batals3, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(batal2)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel12)
+                                        .addGap(30, 30, 30)))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 564, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 564, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jLabel4)
+                                .addGap(217, 217, 217))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jLabel6)
+                                .addGap(205, 205, 205))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addGap(339, 339, 339)
+                                .addComponent(logout))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel5)
+                                .addGap(427, 427, 427))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 970, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(56, 56, 56))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -193,45 +309,57 @@ public class G3 extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(logout))
-                .addGap(41, 41, 41)
+                .addGap(30, 30, 30)
+                .addComponent(jLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(14, 14, 14)
+                .addComponent(jLabel14)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGap(18, 18, 18)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(32, 32, 32)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(terima1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel6))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(terima2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel7))
-                        .addGap(18, 18, 18)
-                        .addComponent(terima))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel3)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel4))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(batals2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel9))
-                        .addGap(61, 61, 61)
-                        .addComponent(batal1)))
-                .addGap(8, 8, 8)
-                .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
-                .addComponent(jLabel4)
+                            .addComponent(jLabel9)
+                            .addComponent(terima2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel7))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(terima)
+                            .addComponent(batal1))))
+                .addGap(43, 43, 43)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel12)
+                    .addComponent(jLabel13)
+                    .addComponent(jLabel6))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(batals3, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel11)
+                            .addComponent(terima4, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel10))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(terima5)
+                            .addComponent(batal2)))
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
-        pack();
+        setSize(new java.awt.Dimension(1125, 703));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void terima1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_terima1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_terima1ActionPerformed
 
     private void terima2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_terima2ActionPerformed
         // TODO add your handling code here:
@@ -253,27 +381,46 @@ public class G3 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_logoutActionPerformed
 
+    private void terima4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_terima4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_terima4ActionPerformed
+
+    private void terima5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_terima5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_terima5ActionPerformed
+
+    private void batals3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_batals3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_batals3ActionPerformed
+
+    private void batal2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_batal2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_batal2ActionPerformed
+
     /**
      * @param args the command line arguments
-     */ 
-
-    public void reset (){
+     */
+    public void reset() {
         batals2.setText("");
-        terima1.setText("");
         terima2.setText("");
+        batals3.setText("");
+        terima4.setText("");
     }
-    
 
     public String getBatals2() {
         return batals2.getText();
     }
 
-    public String getTerima1() {
-        return terima1.getText();
-    }
-
     public String getTerima2() {
         return terima2.getText();
+    }
+
+    public String getBatals3() {
+        return batals3.getText();
+    }
+
+    public String getTerima4() {
+        return terima4.getText();
     }
 
     void Listener1(ActionListener addListener1) {
@@ -288,6 +435,14 @@ public class G3 extends javax.swing.JFrame {
         logout.addActionListener(addListener3);
     }
 
+    void Listener4(ActionListener e) {
+        terima5.addActionListener(e);
+    }
+
+    void Listener5(ActionListener e) {
+        batal2.addActionListener(e);
+    }
+
     public void settable(String a, String b, String c, String d, String e) {
         DefaultTableModel model = (DefaultTableModel) tpesan.getModel();
         Object rowdata[] = new Object[5];
@@ -299,29 +454,83 @@ public class G3 extends javax.swing.JFrame {
         model.addRow(rowdata);
     }
 
-    public void settterima (String a, String b, String c){
+    public void settable1(String a, String b, String c, String d, String e, String f) {
+        DefaultTableModel model = (DefaultTableModel) tpesan1.getModel();
+        Object rowdata[] = new Object[6];
+        rowdata[0] = a;
+        rowdata[1] = b;
+        rowdata[2] = c;
+        rowdata[3] = d;
+        rowdata[4] = e;
+        rowdata[5] = f;
+        model.addRow(rowdata);
+    }
+
+    public void settterima(String a, String b, String c) {
         DefaultTableModel model = (DefaultTableModel) tterima.getModel();
-        Object rowdata[] = new Object [3];
+        Object rowdata[] = new Object[3];
         rowdata[0] = a;
         rowdata[1] = b;
         rowdata[2] = c;
         model.addRow(rowdata);
     }
-    
-    public void removeRow (int i){
-        DefaultTableModel model = (DefaultTableModel) tterima.getModel();
-        if (i >= 0){
+
+    public void settterima1(String a, String b, String c, String d) {
+        DefaultTableModel model = (DefaultTableModel) tterima1.getModel();
+        Object rowdata[] = new Object[4];
+        rowdata[0] = a;
+        rowdata[1] = b;
+        rowdata[2] = c;
+        rowdata[3] = d;
+        model.addRow(rowdata);
+    }
+
+    public void removeRowpel(int i) {
+        DefaultTableModel model = (DefaultTableModel) tpesan.getModel();
+        if (i >= 0) {
             model.removeRow(i);
+        } else {
+            JOptionPane.showMessageDialog(null, "PESANAN SUDAH KOSONG!!");
         }
-        else
-        {
+    }
+
+    public void removeRowkur(int i) {
+        DefaultTableModel model = (DefaultTableModel) tpesan1.getModel();
+        if (i >= 0) {
+            model.removeRow(i);
+        } else {
+            JOptionPane.showMessageDialog(null, "PESANAN SUDAH KOSONG!!");
+        }
+    }
+
+    public void removeRow(int i) {
+        DefaultTableModel model = (DefaultTableModel) tterima.getModel();
+        if (i >= 0) {
+            model.removeRow(i);
+        } else {
+            JOptionPane.showMessageDialog(null, "PESANAN SUDAH KOSONG!!");
+        }
+    }
+
+    public void removeRowk(int i) {
+        DefaultTableModel model = (DefaultTableModel) tterima1.getModel();
+        if (i >= 0) {
+            model.removeRow(i);
+        } else {
             JOptionPane.showMessageDialog(null, "PESANAN SUDAH KOSONG!!");
         }
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton batal1;
+    private javax.swing.JButton batal2;
     private javax.swing.JTextField batals2;
+    private javax.swing.JTextField batals3;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -331,11 +540,16 @@ public class G3 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JButton logout;
     private javax.swing.JButton terima;
-    private javax.swing.JTextField terima1;
     private javax.swing.JTextField terima2;
+    private javax.swing.JTextField terima4;
+    private javax.swing.JButton terima5;
     private javax.swing.JTable tpesan;
+    private javax.swing.JTable tpesan1;
     private javax.swing.JTable tterima;
+    private javax.swing.JTable tterima1;
     // End of variables declaration//GEN-END:variables
 }
