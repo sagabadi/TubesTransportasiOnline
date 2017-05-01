@@ -6,6 +6,7 @@
 package tubes;
 
 import java.awt.event.ActionListener;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
@@ -63,6 +64,7 @@ public class G3 extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         terima4 = new javax.swing.JTextField();
         terima5 = new javax.swing.JButton();
+        use = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -84,6 +86,7 @@ public class G3 extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("List Pesanan Pelanggan");
 
+        tpesan.setAutoCreateRowSorter(true);
         tpesan.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
         tpesan.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -93,12 +96,14 @@ public class G3 extends javax.swing.JFrame {
                 "Id Pelanggan", "Nama Pelanggan", "Id Pesanan", "Alamat Penjemputan", "Alamat Tujuan"
             }
         ));
+        tpesan.setGridColor(new java.awt.Color(255, 255, 255));
         jScrollPane3.setViewportView(tpesan);
 
         jLabel14.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
         jLabel14.setText("List Pesanan Kurir Pelanggan");
 
+        tpesan1.setAutoCreateRowSorter(true);
         tpesan1.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
         tpesan1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -108,6 +113,7 @@ public class G3 extends javax.swing.JFrame {
                 "Id Pelanggan", "Nama Pelanggan", "Id Pesanan", "Jenis Kurir", "Alamat Asal", "Alamat Tujuan"
             }
         ));
+        tpesan1.setGridColor(new java.awt.Color(255, 255, 255));
         jScrollPane1.setViewportView(tpesan1);
 
         jLabel4.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
@@ -140,7 +146,7 @@ public class G3 extends javax.swing.JFrame {
             }
         });
 
-        jLabel9.setFont(new java.awt.Font("Segoe UI Light", 0, 11)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Id Pesanan");
 
@@ -169,6 +175,7 @@ public class G3 extends javax.swing.JFrame {
                 "Id Pesanan", "Alamat Penjemputan", "Alamat Tujuan"
             }
         ));
+        tterima.setGridColor(new java.awt.Color(255, 255, 255));
         jScrollPane2.setViewportView(tterima);
 
         jLabel6.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
@@ -184,6 +191,7 @@ public class G3 extends javax.swing.JFrame {
                 "Id Pesanan", "Jenis Kurir", "Alamat Asal", "Alamat Tujuan"
             }
         ));
+        tterima1.setGridColor(new java.awt.Color(255, 255, 255));
         jScrollPane4.setViewportView(tterima1);
 
         batal2.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
@@ -366,14 +374,18 @@ public class G3 extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        use.setFont(new java.awt.Font("Kartika", 0, 12)); // NOI18N
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap()
+                .addComponent(use)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addGap(343, 343, 343)
+                .addGap(344, 344, 344)
                 .addComponent(logout)
                 .addGap(29, 29, 29))
             .addGroup(layout.createSequentialGroup()
@@ -383,11 +395,17 @@ public class G3 extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 16, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(logout)
-                    .addComponent(jLabel1))
-                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(logout)
+                            .addComponent(use))
+                        .addGap(18, 18, 18))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)))
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -465,6 +483,11 @@ public class G3 extends javax.swing.JFrame {
         batal1.addActionListener(addListener2);
     }
 
+    public void setUse(String use) {
+        this.use.setText("Welcome Driver : " +use);
+    }
+
+    
     void Listener3(ActionListener addListener3) {
         logout.addActionListener(addListener3);
     }
@@ -586,5 +609,6 @@ public class G3 extends javax.swing.JFrame {
     private javax.swing.JTable tpesan1;
     private javax.swing.JTable tterima;
     private javax.swing.JTable tterima1;
+    private javax.swing.JLabel use;
     // End of variables declaration//GEN-END:variables
 }

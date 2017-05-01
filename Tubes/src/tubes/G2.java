@@ -168,6 +168,7 @@ public class G2 extends javax.swing.JFrame {
                 "Id Kurir", "Jenis Kurir", "Asal", "Tujuan"
             }
         ));
+        jTable1.setGridColor(new java.awt.Color(255, 255, 255));
         jScrollPane2.setViewportView(jTable1);
 
         pesan.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -182,6 +183,7 @@ public class G2 extends javax.swing.JFrame {
                 "Id Pesanan", "Alamat Penjemputan", "Alamat Tujuan"
             }
         ));
+        tpesan.setGridColor(new java.awt.Color(255, 255, 255));
         jScrollPane1.setViewportView(tpesan);
 
         jLabel14.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -450,7 +452,7 @@ public class G2 extends javax.swing.JFrame {
     }
     
     public void setUse(String use, String b) {
-        this.use.setText("Welcome : "+use );
+        this.use.setText("Welcome Customer : "+use );
     }   
     
     public String getBatals() {

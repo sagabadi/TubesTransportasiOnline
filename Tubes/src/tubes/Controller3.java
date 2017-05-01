@@ -39,6 +39,7 @@ public class Controller3 {
         for (int j = 0; j < model.getPeng(i).getLengthk(); j++) {
             g3.settterima1(model.getPeng(i).getKurir(j).getId(), model.getPeng(i).getKurir(j).getNama(), model.getPeng(i).getKurir(j).getAsal(), model.getPeng(i).getKurir(j).getTujuan());
         }
+        g3.setUse(model.getPeng(i).getNama());
 
         g3.Listener1(new ActionListener() {
             @Override
