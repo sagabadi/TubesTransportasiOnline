@@ -49,7 +49,8 @@ public class AplikasiConsole {
                 System.out.print("Masukkan Id Anda   : ");
                 b = cin.nextLine();
                 model.loadPelall();
-                if (model.searchPel(a, b) == null) {
+                model.loadPengall();
+                if (model.searchPel(a, b) == null && model.searchPeng(a, b) == null) {
                     model.setPe(a, b);
                 } else {
                     System.out.println("Akun Sudah Terpakai");
@@ -64,12 +65,13 @@ public class AplikasiConsole {
                     System.out.print("Masukkan Id Anda   : ");
                     b = cin.nextLine();
                     model.loadPelall();
-                    if (model.searchPel(a, b) == null) {
+                    model.loadPengall();
+                    if (model.searchPel(a, b) == null && model.searchPeng(a, b) == null) {
                         model.setPe(a, b);
                     } else {
                         System.out.println("Akun Sudah Terpakai");
                     }
-                    System.out.println("1. Tambah pesanan");
+                    System.out.println("1. Tambah Pelanggan");
                     System.out.println("2. Selesai");
                     System.out.print("Masukkan Pilihan Anda :  ");
                     pal = can.nextInt();
@@ -80,12 +82,13 @@ public class AplikasiConsole {
                 System.out.print("Masukkan Id Anda   : ");
                 b = cin.nextLine();
                 model.loadPengall();
-                if (model.searchPeng(a, b) == null) {
+                model.loadPelall();
+                if (model.searchPeng(a, b) == null && model.searchPel(a, b) == null) {
                     model.setPeng(a, b);
                 } else {
                     System.out.println("Akun Sudah terpakai");
                 }
-                System.out.println("1. Tambah Pelanggan");
+                System.out.println("1. Tambah Pengemudi");
                 System.out.println("2. Selesai");
                 System.out.print("Masukkan Pilihan Anda :  ");
                 pal = can.nextInt();
@@ -95,12 +98,13 @@ public class AplikasiConsole {
                     System.out.print("Masukkan Id Anda   : ");
                     b = cin.nextLine();
                     model.loadPengall();
-                    if (model.searchPeng(a, b) == null) {
+                    model.loadPelall();
+                    if (model.searchPeng(a, b) == null && model.searchPel(a, b) == null) {
                         model.setPeng(a, b);
                     } else {
                         System.out.println("Akun Sudah Terpakai");
                     }
-                    System.out.println("1. Tambah pesanan");
+                    System.out.println("1. Tambah Pengemudi");
                     System.out.println("2. Selesai");
                     System.out.print("Masukkan Pilihan Anda :  ");
                     pal = can.nextInt();

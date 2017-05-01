@@ -34,7 +34,8 @@ public class Controller {
                     a = g.getNama();
                     b = g.getPass();
                     model.loadPelall();
-                    if (model.searchPel(a, b) == null) {
+                    model.loadPengall();
+                    if (model.searchPel(a, b) == null && model.searchPeng(a, b) == null) {
                         model.setPe(a, b);
                         JOptionPane.showMessageDialog(null, "Pelanggan Berhasil Ditambah");
                     } else {
@@ -55,7 +56,8 @@ public class Controller {
                     a = g.getNama();
                     b = g.getPass();
                     model.loadPengall();
-                    if (model.searchPeng(a, b) == null) {
+                    model.loadPengall();
+                    if (model.searchPeng(a, b) == null && model.searchPel(a, b) == null) {
                         model.setPeng(a, b);
                         JOptionPane.showMessageDialog(null, "Pengemudi Berhasil Ditambah");
                         g.reset();
